@@ -1,0 +1,15 @@
+<body>
+    <h1>제목</h1>
+    <h3>클릭횟수 : 0</h3>
+    </body>
+    <script>
+    document.body.onselectstart = () => false;
+    let count = 0;
+    const h1 = document.querySelector('h1');
+    const h3 = document.querySelector('h3');
+    h1.addEventListener('click', function() {
+        count += 1;
+        h3.innerText = `클릭횟수 : ${count}`;
+    });
+    </script>
+        

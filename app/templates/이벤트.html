@@ -1,0 +1,40 @@
+<style>
+    div {
+        position: relative;
+        width: 100%;
+        max-width: 380px;
+        padding: 80px 40px 40px;
+        background: rgb(255, 255, 255);
+        border-radius: 10px;
+        color: black;
+        box-shadow: 0 15px 25px rgba(66, 66, 66, 0.5);
+      }
+</style>
+<body>
+    <div>
+    <h1>🎈</h1>
+    </div>
+    </body>
+
+
+<script>
+    const star = document.querySelector('h1');
+    star.style.position = 'absolute';
+    let [x, y] = [0, 0];
+    const block = 20;
+    const print = () => {
+    star.style.left = `${x * block}px`
+    star.style.top = `${y * block}px`
+    };
+    print();
+    const [left, up, right, down] = [37, 38, 39, 40];
+    document.body.addEventListener('keydown', (event) => {
+    switch (event.keyCode) {
+    case left : x -= 1; break;
+    case up : y -= 1; break;
+    case right: x += 1; break;
+    case down : y += 1; break;
+    }
+    print();
+    });
+</script>
